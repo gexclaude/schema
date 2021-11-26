@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "definitions": {
+      "timedef": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time",
+        "minLength": 1
+      },
+      "kamKatalogIdType": {
+        "type": "integer",
+        "minLength": 1,
+        "maxLength": 9
+      },
+      "pedasOidType": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      },
+      "pedasOidArrayType": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/pedasOidType"
+        }
+      },
+      "pedasUidTyp": {
+        "type": "integer",
+        "minLength": 1,
+        "maxLength": 10
+      },
+      "pedasUid": {
+        "properties": {
+          "key": {
+            "$ref": "#/definitions/pedasOidType"
+          },
+          "typ": {
+            "$ref": "#/definitions/pedasUidTyp"
+          }
+        },
+        "type": "object",
+        "additionalProperties": false
+      },
+      "auftragId": {
+        "type": "string",
+        "minLength": 1
+      },
+      "produkte": {
+        "type": "array",
+        "items": {
+          "$ref": "commonTypes.json#/definitions/produkt"
+        }
+      },
+      "produkt": {
+        "type": "object",
+        "properties": {
+          "ggsStvUID": {
+            "$ref": "#/definitions/pedasUid"
+          }
+        }
+      }
+    }
+  }
+  
