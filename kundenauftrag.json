@@ -1,50 +1,50 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "properties": {
-      "time": {
-        "$ref": "commonTypes.json#/definitions/timedef"
-      },
-      "kamKontextId": {
-        "$ref": "commonTypes.json#/definitions/kamKatalogIdType"
-      },
-      "kamAppSystemId": {
-        "$ref": "commonTypes.json#/definitions/kamKatalogIdType"
-      },
-      "kamAuftragTypId": {
-        "$ref": "commonTypes.json#/definitions/kamKatalogIdType"
-      },
-      "auftragId": {
-        "$ref": "commonTypes.json#/definitions/auftragId"
-      },
-      "event": {
-        "$ref": "#/definitions/event"
-      },
-      "betroffeneKundenstaemmeOids": {
-        "$ref": "commonTypes.json#/definitions/pedasOidArrayType"
-      },
-      "betroffenePersonenOids": {
-        "$ref": "commonTypes.json#/definitions/pedasOidArrayType"
-      },
-      "auftraggebendePersonenOids": {
-        "$ref": "commonTypes.json#/definitions/pedasOidArrayType"
-      },
-      "produkte": {
-        "$ref": "commonTypes.json#/definitions/produkte"
-      }
-    },
-    "required": [
-      "auftragId", "event"
-    ],
-    "definitions": {
-      "event": {
-        "enum": [
-          "ERSTELLT",
-          "AKTUALISIERT",
-          "ABGESCHLOSSEN",
-          "ABGEBROCHEN"
-        ]
-      }
-    }
-  }
-  
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"time": {
+			"$ref": "commonTypes.json#/definitions/timedef"
+		},
+		"kamKontextId": {
+			"$ref": "commonTypes.json#/definitions/kamKatalogIdType"
+		},
+		"kamAppSystemId": {
+			"$ref": "commonTypes.json#/definitions/kamKatalogIdType"
+		},
+		"kamAuftragTypId": {
+			"$ref": "commonTypes.json#/definitions/kamKatalogIdType"
+		},
+		"auftragId": {
+			"$ref": "commonTypes.json#/definitions/kamObjektIdType"
+		},
+		"event": {
+			"$ref": "#/definitions/event"
+		},
+		"betroffeneKundenstaemmeOids": {
+			"$ref": "commonTypes.json#/definitions/pedasOidArrayType"
+		},
+		"betroffenePersonenOids": {
+			"$ref": "commonTypes.json#/definitions/pedasOidArrayType"
+		},
+		"auftraggebendePersonenOids": {
+			"$ref": "commonTypes.json#/definitions/pedasOidArrayType"
+		},
+		"produkte": {
+			"$ref": "commonTypes.json#/definitions/produkte"
+		}
+	},
+	"required": [
+		"auftragId",
+		"event"
+	],
+	"definitions": {
+		"event": {
+			"enum": [
+				"ERSTELLT",
+				"AKTUALISIERT",
+				"ABGESCHLOSSEN",
+				"ABGEBROCHEN"
+			]
+		}
+	}
+}
