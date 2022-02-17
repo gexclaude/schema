@@ -19,11 +19,23 @@
 		},
 		"beziehung": {
 			"$ref": "commonTypes.json#/definitions/beziehungType"
+		},
+		"event": {
+			"$ref": "#/definitions/event"
 		}
 	},
 	"required": [
 		"quelle",
 		"ziel",
-		"beziehung"
-	]
+		"beziehung",
+		"event"
+	],
+	"definitions": {
+		"event": {
+			"enum": [
+				"ERSTELLT",
+				"AUFGEHOBEN"
+			]
+		}
+	}
 }
