@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"type": "object",
+	"description": "Ein Kundenauftrag im Sinne der KAM Terminologie, siehe https://confluence.pnet.ch/display/KAP/Datenarchitektur+und+wichtigste+Begriffe",
 	"properties": {
 		"time": {
 			"$ref": "commonTypes.json#/definitions/timedef"
@@ -22,7 +23,8 @@
 			"$ref": "#/definitions/event"
 		},
 		"betroffeneKundenstaemmeOids": {
-			"$ref": "commonTypes.json#/definitions/pedasOidArrayType"
+			"$ref": "commonTypes.json#/definitions/pedasOidArrayType",
+			"description": "Kundenstämme, auf welche der Auftrag einwirkt"
 		},
 		"betroffenePersonenOids": {
 			"$ref": "commonTypes.json#/definitions/pedasOidArrayType",
