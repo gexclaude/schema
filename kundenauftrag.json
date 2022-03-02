@@ -9,12 +9,10 @@
 			"$ref": "commonTypes.json#/definitions/kamKontextId"
 		},
 		"kamAppSystemId": {
-			"$ref": "commonTypes.json#/definitions/kamKatalogId",
-			"description": "Technischer Schlüssel für KAM Kontextanwendungen, siehe https://confluence.pnet.ch/display/KAP/KAM+Kontextanwendungen. Für nicht KAM Kontextanwendungen optional"
+			"$ref": "commonTypes.json#/definitions/kamAppSystemId"
 		},
 		"kamAuftragTypId": {
-			"$ref": "commonTypes.json#/definitions/kamKatalogId",
-			"description": "Typ des Kundenauftrags gemäss KAM Katalog Auftragstyp"
+			"$ref": "commonTypes.json#/definitions/kamAuftragTypId"
 		},
 		"auftragId": {
 			"$ref": "commonTypes.json#/definitions/kamObjektId",
