@@ -20,6 +20,14 @@
       "$ref": "#/definitions/kamKatalogId",
       "description": "ID des KAM Kontexts gemäss KAM Kontext Katalog, welcher das Event meldet"
     },
+    "kamAppSystemId": {
+      "$ref": "#/definitions/kamKatalogId",
+      "description": "Technischer Schlüssel für KAM Kontextanwendungen, siehe https://confluence.pnet.ch/display/KAP/KAM+Kontextanwendungen. Für nicht KAM Kontextanwendungen optional"
+    },
+    "kamAuftragTypId": {
+      "$ref": "#/definitions/kamKatalogId",
+      "description": "Typ des Kundenauftrags gemäss KAM Katalog Auftragstyp"
+    },
     "pedasOidType": {
       "type": "string",
       "minLength": 1,
