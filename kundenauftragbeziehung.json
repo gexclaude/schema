@@ -9,8 +9,7 @@
 			"$ref": "commonTypes.json#/definitions/kamKontextId"
 		},
 		"kamAppSystemId": {
-			"$ref": "commonTypes.json#/definitions/kamKatalogId",
-			"description": "Technischer Schlüssel für KAM Kontextanwendungen, siehe https://confluence.pnet.ch/display/KAP/KAM+Kontextanwendungen. Für nicht KAM Kontextanwendungen optional"
+			"$ref": "commonTypes.json#/definitions/kamAppSystemId"
 		},
 		"quelle": {
 			"$ref": "commonTypes.json#/definitions/kamObjekt"
