@@ -6,10 +6,11 @@
 			"$ref": "commonTypes.json#/definitions/timedef"
 		},
 		"kamKontextId": {
-			"$ref": "commonTypes.json#/definitions/kamKatalogIdType"
+			"$ref": "commonTypes.json#/definitions/kamKontextId"
 		},
 		"kamAppSystemId": {
-			"$ref": "commonTypes.json#/definitions/kamKatalogIdType"
+			"$ref": "commonTypes.json#/definitions/kamKatalogId",
+			"description": "Technischer Schlüssel für KAM Kontextanwendungen, siehe https://confluence.pnet.ch/display/KAP/KAM+Kontextanwendungen. Für nicht KAM Kontextanwendungen optional"
 		},
 		"quelle": {
 			"$ref": "commonTypes.json#/definitions/kamObjekt"
@@ -18,7 +19,7 @@
 			"$ref": "commonTypes.json#/definitions/kamObjekt"
 		},
 		"beziehung": {
-			"$ref": "commonTypes.json#/definitions/beziehungType"
+			"$ref": "commonTypes.json#/definitions/relationType"
 		},
 		"event": {
 			"$ref": "#/definitions/event"
