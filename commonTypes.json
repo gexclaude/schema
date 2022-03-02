@@ -10,10 +10,15 @@
       "format": "date-time",
       "minLength": 1
     },
-    "kamKatalogIdType": {
+    "kamKatalogId": {
       "type": "integer",
       "minLength": 1,
-      "maxLength": 9
+      "maxLength": 9,
+      "description": "ID eines KAM Katalog Eintrages (Kontext, Auftragstyp, AufgabeTyp)"
+    },
+    "kamKontextId": {
+      "$ref": "#/definitions/kamKatalogId",
+      "description": "ID des KAM Kontexts gemäss KAM Kontext Katalog, welcher das Event meldet"
     },
     "pedasOidType": {
       "type": "string",
@@ -26,7 +31,7 @@
         "$ref": "#/definitions/pedasOidType"
       }
     },
-    "pedasUidTyp": {
+    "pedasUidType": {
       "type": "integer",
       "minLength": 1,
       "maxLength": 10
@@ -37,7 +42,7 @@
           "$ref": "#/definitions/pedasOidType"
         },
         "typ": {
-          "$ref": "#/definitions/pedasUidTyp"
+          "$ref": "#/definitions/pedasUidType"
         }
       },
       "type": "object",
@@ -48,14 +53,14 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/kamObjektIdType"
+          "$ref": "#/definitions/kamObjektId"
         },
         "typ": {
           "$ref": "#/definitions/kamObjektTyp"
         }
       }
     },
-    "kamObjektIdType": {
+    "kamObjektId": {
       "description": "ID für KAM Objekte wie Auftrag und Antrag",
       "type": "string",
       "minLength": 1
@@ -63,7 +68,7 @@
     "kamObjektIdArrayType": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/kamObjektIdType"
+        "$ref": "#/definitions/kamObjektId"
       }
     },
     "kamObjektTyp": {
@@ -72,7 +77,7 @@
         "ANTRAG"
       ]
     },
-    "beziehungType": {
+    "relationType": {
       "enum": [
         "IS_CHILD_OF",
         "IS_PARENT_OF"
