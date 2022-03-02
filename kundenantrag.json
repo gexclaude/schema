@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"type": "object",
+	"description": "Ein Antrag im Sinne der KAM Terminologie, siehe https://confluence.pnet.ch/display/KAP/Datenarchitektur+und+wichtigste+Begriffe",
 	"properties": {
 		"time": {
 			"$ref": "commonTypes.json#/definitions/timedef"
