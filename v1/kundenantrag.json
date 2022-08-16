@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"description": "Ein Antrag im Sinne der KAM Terminologie, siehe https://confluence.pnet.ch/display/KAP/Datenarchitektur+und+wichtigste+Begriffe",
+	"properties": {
+		"time": {
+			"$ref": "commonTypes.json#/definitions/timedef"
+		},
+		"kamKontextId": {
+			"$ref": "commonTypes.json#/definitions/kamKontextId"
+		},
+		"kamAppSystemId": {
+			"$ref": "commonTypes.json#/definitions/kamAppSystemId"
+		},
+		"antragId": {
+			"$ref": "commonTypes.json#/definitions/kamObjektId",
+			"description": "Eindeutige ID des Antrags"
+		},
+		"antragstellendePersonenOids": {
+			"$ref": "commonTypes.json#/definitions/pedasOidArrayType",
+			"description": "Natürliche oder juristische Personen, welche den Antrag gestellt / initiiert haben. Bei den Personen handelt es sich um Kunden, nie um PostFinance Mitarbeiter."
+		}
+	},
+	"required": [
+		"antragId"
+	]
+}

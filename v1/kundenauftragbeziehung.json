@@ -1,0 +1,42 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"description": "Erstellt oder hebt eine Beziehung zwischen zwei Kundenaufträgen (Hierarchie) oder einem Kundenauftrag und einem Kundenantrag ab",
+	"properties": {
+		"time": {
+			"$ref": "commonTypes.json#/definitions/timedef"
+		},
+		"kamKontextId": {
+			"$ref": "commonTypes.json#/definitions/kamKontextId"
+		},
+		"kamAppSystemId": {
+			"$ref": "commonTypes.json#/definitions/kamAppSystemId"
+		},
+		"quelle": {
+			"$ref": "commonTypes.json#/definitions/kamObjekt"
+		},
+		"ziel": {
+			"$ref": "commonTypes.json#/definitions/kamObjekt"
+		},
+		"beziehung": {
+			"$ref": "commonTypes.json#/definitions/relationType"
+		},
+		"event": {
+			"$ref": "#/definitions/event"
+		}
+	},
+	"required": [
+		"quelle",
+		"ziel",
+		"beziehung",
+		"event"
+	],
+	"definitions": {
+		"event": {
+			"enum": [
+				"ERSTELLT",
+				"AUFGEHOBEN"
+			]
+		}
+	}
+}

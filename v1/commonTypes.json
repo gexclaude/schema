@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "timedef": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time",
+      "minLength": 1
+    },
+    "kamKatalogId": {
+      "type": "integer",
+      "minLength": 1,
+      "maxLength": 9,
+      "description": "ID eines KAM Katalog Eintrages (Kontext, Auftragstyp, AufgabeTyp)"
+    },
+    "kamKontextId": {
+      "$ref": "#/definitions/kamKatalogId",
+      "description": "ID des KAM Kontexts gemäss KAM Kontext Katalog, welcher das Event meldet"
+    },
+    "kamAppSystemId": {
+      "$ref": "#/definitions/kamKatalogId",
+      "description": "Technischer Schlüssel für KAM Kontextanwendungen, siehe https://confluence.pnet.ch/display/KAP/KAM+Kontextanwendungen. Für nicht KAM Kontextanwendungen optional"
+    },
+    "kamAuftragTypId": {
+      "$ref": "#/definitions/kamKatalogId",
+      "description": "Typ des Kundenauftrags gemäss KAM Katalog Auftragstyp"
+    },
+    "pedasOidType": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "pedasOidArrayType": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/pedasOidType"
+      }
+    },
+    "pedasUidType": {
+      "type": "integer",
+      "minLength": 1,
+      "maxLength": 10
+    },
+    "pedasUid": {
+      "properties": {
+        "key": {
+          "$ref": "#/definitions/pedasOidType"
+        },
+        "typ": {
+          "$ref": "#/definitions/pedasUidType"
+        }
+      },
+      "type": "object",
+      "additionalProperties": false
+    },
+    "kamObjekt": {
+      "description": "KAM Objekt",
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/kamObjektId"
+        },
+        "typ": {
+          "$ref": "#/definitions/kamObjektTyp"
+        }
+      }
+    },
+    "kamObjektId": {
+      "description": "ID für KAM Objekte wie Auftrag und Antrag",
+      "type": "string",
+      "minLength": 1
+    },
+    "kamObjektIdArrayType": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/kamObjektId"
+      }
+    },
+    "kamObjektTyp": {
+      "enum": [
+        "AUFTRAG",
+        "ANTRAG"
+      ]
+    },
+    "relationType": {
+      "enum": [
+        "IS_CHILD_OF",
+        "IS_PARENT_OF"
+      ]
+    },
+    "produkte": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/produkt"
+      }
+    },
+    "produkt": {
+      "type": "object",
+      "properties": {
+        "ggsStvUID": {
+          "$ref": "#/definitions/pedasUid"
+        }
+      }
+    }
+  }
+}
