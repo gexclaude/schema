@@ -33,6 +33,7 @@
 	"required": [
 		"time",
 		"auftragId",
+		"kamBearbeiterRolleId",
 		"event",
 		"taskId"
 	],
